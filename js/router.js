@@ -82,18 +82,19 @@ function setActiveTab(pathname) {
 
 //Hiding the menu for onboarding
 
-// let cUrl = window.location.href;
+let cUrl = window.location.href;
 
-// if (
-//   cUrl.indexOf("explore") != -1 ||
-//   cUrl.indexOf("aarhus") != -1 ||
-//   cUrl.indexOf("allLocations") != -1 ||
-//   cUrl.indexOf("myTrips") != -1 ||
-//   cUrl.indexOf("favourites") != -1 ||
-//   cUrl.indexOf("detailedView") != -1 ||
-//   cUrl.indexOf("profile") != -1
-// ) {
-//   menu.style.display = "flex";
-// } else {
-//   menu.style.display = "none";
-// }
+if (
+  cUrl.indexOf("explore") != -1 ||
+  cUrl.indexOf("aarhus") != -1 ||
+  cUrl.indexOf("allLocations") != -1 ||
+  cUrl.indexOf("myTrips") != -1 ||
+  cUrl.indexOf("favourites") != -1 ||
+  cUrl.indexOf("detailedView") != -1 ||
+  cUrl.indexOf("profile") != -1) 
+{
+  menu.style.display = "flex";s
+} 
+else {
+  menu.style.display = "none";
+}

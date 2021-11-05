@@ -74,7 +74,7 @@ img {
   bottom: 0;
   left: 0;
   right: 0;
-  z-index: 9999;
+  z-index: 9998;
   box-shadow: 0px 40px 99px #afadad;
   border-radius: 35px 35px 0 0;
   flex-direction: row;
@@ -121,4 +121,271 @@ svg {
   flex-direction: column;
   justify-content: space-between;
   padding: 0 10%;
+}
+
+/* Onboarding */
+
+.onboarding-dots {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+}
+
+.active-dot, .passive-dot {
+  border: 1px solid #D42D26;
+  border-radius: 50%;
+  height: 8px;
+  width: 8px;
+  margin: 0 4px;
+}
+
+.active-dot {
+  background-color: #D42D26;
+}
+
+.onboarding-back {
+  position: absolute;
+  top: 38px;
+  left: 32px;
+  width: 24px;
+}
+
+.skip-button {
+  position: absolute;
+  top: 35px;
+  right: 32px;
+  height: auto;
+  width: auto;
+  color: #A1A8AD;
+  font-size: 16px;
+}
+
+.boarding-logo {
+  height: 80px;
+  width: auto;
+  display: block;
+  margin: 0 auto;
+  padding-top: 16px;
+}
+
+.welcome-message {
+  padding: 16px 32px;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  text-align: center;
+}
+
+.onboarding-message {
+  padding: 0 56px;
+  text-align: center;
+  position: absolute;
+  top: 60%;
+}
+
+.next {
+  margin: auto;
+  width: 160px;
+  height: 40px;
+  bottom: 64px;
+}
+
+.next-button {
+  background-color: #D42D26;
+  color: #F5F5F5;
+  border: none;
+  width: 160px;
+  height: 40px;
+  margin: 0 auto;
+  position: absolute;
+  bottom: 64px;
+}
+
+.city-container {
+  margin: 0 32px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}
+
+.city-item {
+  height: 128px;
+}
+
+.frame {
+  border: 1px solid white;
+  height: 112px;
+  margin: 8px;
+  position: relative;
+}
+
+.frame-content {
+  color: white;
+  font-size: 12px;
+  position: absolute;
+  bottom: 0;
+  left: 0.5em;
+  margin: 0;
+}
+
+.city1 {
+  background-image: url("/media/aarhus.png");
+}
+
+.city2 {
+  background-image: url("/media/cph.png");
+}
+
+.city3 {
+  background-image: url("/media/aalborg.png");
+}
+
+.city4 {
+  background-image: url("/media/odense.png");
+}
+
+.options-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 16px;
+  grid-row-gap: 16px;
+  margin: 0 32px;
+}
+
+.option-item {
+  height: 96px;
+  color: white;
+  font-family: montserrat, sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  text-align: center;
+}
+
+.option1 {
+  background-color: #8D1B37;
+}
+
+.option2 {
+  background-color: #317356;
+}
+
+.option3 {
+  background-color: #235777;
+}
+
+.option4 {
+  background-color: #D3A337;
+}
+
+.option-icon {
+  height: 32px;
+  width: auto;
+  margin-top: 20px;
+}
+
+.option-item h6 {
+  font-size: 12px;
+  font-weight: 400;
+  margin-top: 1em;
+}
+
+.fav-conatiner {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 16px;
+  grid-row-gap: 16px;
+  margin: 0 48px;
+}
+
+.fav-item {
+  height: 144px;
+  width: 143px;
+}
+
+.fav1 {
+  background-image: url("/media/img31.png");
+}
+
+.fav2 {
+  background-image: url("/media/img32.png");
+}
+
+.fav3 {
+  background-image: url("/media/img33.png");
+}
+
+.fav4 {
+  background-image: url("/media/img34.png");
+}
+
+.fav-frame {
+  margin: 8px;
+  position: relative;
+  height: 128px;
+}
+
+.fav-like {
+  background-color: white;
+  border-radius: 20%;
+  width: fit-content;
+  padding: 4px;
+  padding-bottom: 0;
+  float: right;
+}
+
+.fav-like img {
+  height: 16px;
+  width: auto;
+}
+
+.fav-icon1 {
+  background-color: #D3A337;
+  padding: 6px;
+  padding-bottom: 2px;
+  width: fit-content;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.fav-icon2 {
+  background-color: #8D1B37;
+  padding: 6px;
+  padding-bottom: 2px;
+  width: fit-content;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.fav-icon3 {
+  background-color: #235777;
+  padding: 6px;
+  padding-bottom: 2px;
+  width: fit-content;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.fav-icon4 {
+  background-color: #317356;
+  padding: 6px;
+  padding-bottom: 2px;
+  width: fit-content;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.favi {
+  height: 16px;
+  width: auto;
 }
