@@ -48,7 +48,7 @@ function attachNavLinkEvents() {
 /**
  * Navigating SPA to specific page by given pathnameß
  */
-export function navigateTo(pathname) {
+function navigateTo(pathname) {
   hideAllPages();
   const basePath = location.pathname.replace("index.html", "");
   window.history.pushState({}, pathname, basePath + pathname);
@@ -82,18 +82,18 @@ function setActiveTab(pathname) {
 
 //Hiding the menu for onboarding
 
-let cUrl = window.location.href;
+// let cUrl = window.location.href;
 
-if (
-  cUrl.indexOf("explore") != -1 ||
-  cUrl.indexOf("aarhus") != -1 ||
-  cUrl.indexOf("allLocations") != -1 ||
-  cUrl.indexOf("myTrips") != -1 ||
-  cUrl.indexOf("favourites") != -1 ||
-  cUrl.indexOf("detailedView") != -1 ||
-  cUrl.indexOf("profile") != -1
-) {
-  menu.style.display = "flex";
-} else {
-  menu.style.display = "none";
-}
+// if (
+//   cUrl.indexOf("explore") != -1 ||
+//   cUrl.indexOf("aarhus") != -1 ||
+//   cUrl.indexOf("allLocations") != -1 ||
+//   cUrl.indexOf("myTrips") != -1 ||
+//   cUrl.indexOf("favourites") != -1 ||
+//   cUrl.indexOf("detailedView") != -1 ||
+//   cUrl.indexOf("profile") != -1
+// ) {
+//   menu.style.display = "flex";
+// } else {
+//   menu.style.display = "none";
+// }

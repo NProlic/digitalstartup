@@ -1,0 +1,124 @@
+:root {
+  --dark-blue: #082747;
+  --red: #d42d26;
+  --grey: #f5f5f5;
+  --white: #ffffff;
+  --eat-red: #8d1b37;
+  --attractions-green: #317356;
+  --events-blue: #235777;
+  --activities-yellow: #d3a337;
+}
+
+/* ---------- general styling ---------- */
+
+html,
+body {
+  max-width: 400px;
+  max-height: 900px;
+  margin: 0 auto;
+  background-color: var(--grey);
+}
+
+p {
+  font-family: montserrat, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: var(--dark-blue);
+}
+
+a {
+  text-decoration: none;
+}
+
+h1 {
+  font-size: 1.5em;
+  font-family: montserrat, sans-serif;
+  font-weight: 500;
+  text-transform: none;
+  color: var(--dark-blue);
+}
+
+h2 {
+  font-size: 1.25em;
+  font-family: montserrat, sans-serif;
+  font-weight: 600;
+  text-transform: none;
+  color: var(--dark-blue);
+}
+
+h3 {
+  font-size: 1em;
+  font-family: montserrat, sans-serif;
+  font-weight: 500;
+  text-transform: none;
+  color: var(--dark-blue);
+}
+
+h4 {
+  font-size: 0.8em;
+  font-family: montserrat, sans-serif;
+  font-weight: 500;
+  text-transform: none;
+  color: var(--dark-blue);
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+/* ---------- tabbar styling ---------- */
+.tabbar {
+  background-color: #fafafa;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  box-shadow: 0px 40px 99px #afadad;
+  border-radius: 35px 35px 0 0;
+  flex-direction: row;
+  justify-content: center;
+  display: flex;
+}
+
+/* Style the links inside the navigation bar */
+
+.tabbar {
+  text-align: center;
+  padding: 20px 16px 14px 16px;
+  text-decoration: none;
+}
+
+/* Add a color to the active/current link */
+.tabbar a.active {
+  color: var(--red);
+  fill: var(--red);
+}
+
+.active path {
+  fill: var(--red);
+}
+
+.nav-link {
+  font-size: 0.65em;
+  font-family: montserrat, sans-serif;
+  font-weight: 400;
+  color: #a3a9ac;
+  display: block;
+}
+
+svg {
+  fill: #a3a9ac;
+}
+
+svg {
+  margin: 1px auto;
+}
+
+.menu-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0 10%;
+}
