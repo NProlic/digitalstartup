@@ -666,12 +666,11 @@ input:checked + .slider:before {
 /* Explore categories */
 
 .aarhus_top {
-  display: block;
-  position: fixed;
   top: 0;
   left: 0;
   right: 0;
   height: 220px;
+  position: absolute;
 }
 
 .frame3 {
@@ -746,7 +745,63 @@ input:checked + .slider:before {
 
 /* Aarhus styling */
 
+.main_section {
+  margin: 8%;
+}
+
 .main_heading {
   font-weight: 600;
   top: 50%;
+  margin-bottom: 12px;
+}
+
+.about_paragraph {
+  font-size: 0.75rem;
+  text-align: inherit;
+  margin-bottom: 30px;
+  margin-top: 0;
+}
+
+.gallery_photo {
+  width: 75px;
+  height: 75px;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+.gallery {
+  display: flex;
+  flex-direction: row;
+  overflow: scroll;
+  margin-bottom: 30px;
+}
+
+.options-container2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 12px;
+  grid-row-gap: 12px;
+  margin: 0 auto 100px auto;
+}
+
+.option-item2 {
+  height: 96px;
+  color: white;
+  font-family: montserrat, sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  text-align: center;
+}
+
+.option-icon2 {
+  height: 40px;
+  width: auto;
+  margin-top: 20px;
+}
+
+.option-item2 h6 {
+  font-size: 12px;
+  font-weight: 400;
+  margin-top: 5px;
 }
