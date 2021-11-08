@@ -91,10 +91,9 @@ if (
   cUrl.indexOf("myTrips") != -1 ||
   cUrl.indexOf("favourites") != -1 ||
   cUrl.indexOf("detailedView") != -1 ||
-  cUrl.indexOf("profile") != -1) 
-{
-  menu.style.display = "flex";s
-} 
-else {
+  cUrl.indexOf("profile") != -1
+) {
+  menu.style.display = "flex";
+} else {
   menu.style.display = "none";
 }
