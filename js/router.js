@@ -10,6 +10,10 @@ const routes = {
   "#/explore": "explore",
   "#/aarhus": "aarhus",
   "#/allLocations": "allLocations",
+  "#/placesToEat": "placesToEat",
+  "#/attractions": "attractions",
+  "#/events": "events",
+  "#/activities": "activities",
   "#/myTrips": "myTrips",
   "#/favourites": "favourites",
   "#/detailedView": "detailedView",
@@ -88,13 +92,17 @@ if (
   cUrl.indexOf("explore") != -1 ||
   cUrl.indexOf("aarhus") != -1 ||
   cUrl.indexOf("allLocations") != -1 ||
+  cUrl.indexOf("placesToEat") != -1 ||
+  cUrl.indexOf("attractions") != -1 ||
+  cUrl.indexOf("events") != -1 ||
+  cUrl.indexOf("activities") != -1 ||
   cUrl.indexOf("myTrips") != -1 ||
   cUrl.indexOf("favourites") != -1 ||
   cUrl.indexOf("detailedView") != -1 ||
-  cUrl.indexOf("profile") != -1) 
-{
-  menu.style.display = "flex";s
-} 
-else {
+  cUrl.indexOf("profile") != -1
+) {
+  menu.style.display = "flex";
+  s;
+} else {
   menu.style.display = "none";
 }

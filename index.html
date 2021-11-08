@@ -8,6 +8,8 @@
     <meta name="author" content="" />
     <link rel="stylesheet" href="css/main.css" />
     <link rel="stylesheet" href="https://use.typekit.net/zyz1iiy.css" />
+    <link rel="stylesheet" href="css/lightbox.min.css" />
+    <script src="js/lightbox-plus-jquery.min.js"></script>
   </head>
 
   <body>
@@ -298,10 +300,13 @@
       </div>
     </section>
 
+    <!-- Aarhus -->
     <section id="aarhus" class="page">
       <img src="media/aarhus2.jpg" alt="aarhus" class="aarhus_top" />
       <div class="frame3">
-        <img src="media/logo-heart.png" alt="logo" class="logo_heart_top" />
+        <a href="#/explore" class="nav-link"
+          ><img src="media/logo-heart.png" alt="logo" class="logo_heart_top"
+        /></a>
         <p class="frame-content3">AARHUS</p>
       </div>
 
@@ -310,7 +315,7 @@
         <p class="about_paragraph">
           In Denmark's second largest city, high-quality international
           experiences await you!
-          <br /><br />
+          <br />
           Regardless of whether you are visiting attractions, looking for modern
           architecture, delicious gastronomy or wonderful activities such as
           shopping, cozy events or fun and action.
@@ -318,77 +323,172 @@
 
         <h4 class="main_heading">Images</h4>
         <div class="gallery">
-          <a href="media/aarhus/aarhus (1).jpg "
+          <a href="media/aarhus/aarhus (1).jpg " data-lightbox="mygallery"
             ><img src="media/aarhus/aarhus (1).jpg" class="gallery_photo"
           /></a>
 
-          <a href="media/aarhus/aarhus (10).jpg"
+          <a href="media/aarhus/aarhus (10).jpg" data-lightbox="mygallery"
             ><img src="media/aarhus/aarhus (10).jpg" class="gallery_photo"
           /></a>
 
-          <a href="media/aarhus/aarhus (11).jpg"
+          <a href="media/aarhus/aarhus (11).jpg" data-lightbox="mygallery"
             ><img src="media/aarhus/aarhus (11).jpg" class="gallery_photo"
           /></a>
 
-          <a href="media/aarhus/aarhus (5).jpg"
+          <a href="media/aarhus/aarhus (5).jpg" data-lightbox="mygallery"
             ><img src="media/aarhus/aarhus (5).jpg" class="gallery_photo"
           /></a>
 
-          <a href="media/aarhus/aarhus (6).jpg"
+          <a href="media/aarhus/aarhus (6).jpg" data-lightbox="mygallery"
             ><img src="media/aarhus/aarhus (6).jpg" class="gallery_photo"
           /></a>
 
-          <a href="media/aarhus/aarhus (7).jpg"
+          <a href="media/aarhus/aarhus (7).jpg" data-lightbox="mygallery"
             ><img src="media/aarhus/aarhus (7).jpg" class="gallery_photo"
           /></a>
 
-          <a href="media/aarhus/aarhus (8).jpg"
+          <a href="media/aarhus/aarhus (8).jpg" data-lightbox="mygallery"
             ><img src="media/aarhus/aarhus (8).jpg" class="gallery_photo"
           /></a>
 
-          <a href="media/aarhus/aarhus (9).jpg"
+          <a href="media/aarhus/aarhus (9).jpg" data-lightbox="mygallery"
             ><img src="media/aarhus/aarhus (9).jpg" class="gallery_photo"
           /></a>
         </div>
 
         <h4 class="main_heading">What to do?</h4>
         <div class="options-container2">
-          <div class="option-item2 option1">
+          <a href="#/placesToEat" class="option-item2 option1 nav-link">
             <img src="icons/restaurant.png" class="option-icon2" />
             <h6>Places to eat</h6>
-          </div>
-          <div class="option-item2 option2">
+          </a>
+
+          <a href="#/attractions" class="option-item2 option2 nav-link">
             <img src="icons/museum.png" class="option-icon2" />
             <h6>Attractions</h6>
-          </div>
-          <div class="option-item2 option3">
+          </a>
+
+          <a href="#/events" class="option-item2 option3 nav-link">
             <img src="icons/calendar.png" class="option-icon2" />
             <h6>Events</h6>
-          </div>
-          <div class="option-item2 option4">
+          </a>
+
+          <a href="#/activities" class="option-item2 option4 nav-link">
             <img src="icons/running.png" class="option-icon2" />
             <h6>Activities</h6>
-          </div>
+          </a>
         </div>
       </div>
     </section>
 
-    <section id="allLocations" class="page">
+    <!-- PLACES TO EAT -->
+    <section id="placesToEat" class="page">
       <img src="media/aarhus2.jpg" alt="aarhus" class="aarhus_top" />
       <div class="frame3">
-        <img src="media/logo-heart.png" alt="logo" class="logo_heart_top" />
+        <a href="#/explore" class="nav-link">
+          <img src="media/logo-heart.png" alt="logo" class="logo_heart_top"
+        /></a>
         <p class="frame-content3">AARHUS</p>
       </div>
       <div class="container_data">
-        <a href="#/explore" class="nav-link">
+        <a href="#/aarhus" class="nav-link">
           <img src="media/arrow-left.png" class="arrow_back"
         /></a>
 
         <div class="categories_buttons">
-          <a href="#/" class="category_button active_button">Places to eat</a>
-          <a href="#/" class="category_button">Attractions</a>
-          <a href="#/" class="category_button">Events</a>
-          <a href="#/" class="category_button">Activities</a>
+          <a href="#/placesToEat" class="category_button active_button nav-link"
+            >Places to eat</a
+          >
+          <a href="#/attractions" class="category_button nav-link"
+            >Attractions</a
+          >
+          <a href="#/events" class="category_button nav-link">Events</a>
+          <a href="#/activities" class="category_button nav-link">Activities</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ATTRACTIONS -->
+    <section id="attractions" class="page">
+      <img src="media/aarhus2.jpg" alt="aarhus" class="aarhus_top" />
+      <div class="frame3">
+        <a href="#/explore" class="nav-link">
+          <img src="media/logo-heart.png" alt="logo" class="logo_heart_top"
+        /></a>
+        <p class="frame-content3">AARHUS</p>
+      </div>
+      <div class="container_data">
+        <a href="#/aarhus" class="nav-link">
+          <img src="media/arrow-left.png" class="arrow_back"
+        /></a>
+
+        <div class="categories_buttons">
+          <a href="#/placesToEat" class="category_button nav-link"
+            >Places to eat</a
+          >
+          <a href="#/attractions" class="category_button active_button nav-link"
+            >Attractions</a
+          >
+          <a href="#/events" class="category_button nav-link">Events</a>
+          <a href="#/activities" class="category_button nav-link">Activities</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- EVENTS -->
+    <section id="events" class="page">
+      <img src="media/aarhus2.jpg" alt="aarhus" class="aarhus_top" />
+      <div class="frame3">
+        <a href="#/explore" class="nav-link">
+          <img src="media/logo-heart.png" alt="logo" class="logo_heart_top"
+        /></a>
+        <p class="frame-content3">AARHUS</p>
+      </div>
+      <div class="container_data">
+        <a href="#/aarhus" class="nav-link">
+          <img src="media/arrow-left.png" class="arrow_back"
+        /></a>
+
+        <div class="categories_buttons">
+          <a href="#/placesToEat" class="category_button nav-link"
+            >Places to eat</a
+          >
+          <a href="#/attractions" class="category_button nav-link"
+            >Attractions</a
+          >
+          <a href="#/events" class="category_button active_button nav-link"
+            >Events</a
+          >
+          <a href="#/activities" class="category_button nav-link">Activities</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ACTIVITIES -->
+    <section id="activities" class="page">
+      <img src="media/aarhus2.jpg" alt="aarhus" class="aarhus_top" />
+      <div class="frame3">
+        <a href="#/explore" class="nav-link">
+          <img src="media/logo-heart.png" alt="logo" class="logo_heart_top"
+        /></a>
+        <p class="frame-content3">AARHUS</p>
+      </div>
+      <div class="container_data">
+        <a href="#/aarhus" class="nav-link">
+          <img src="media/arrow-left.png" class="arrow_back"
+        /></a>
+
+        <div class="categories_buttons">
+          <a href="#/placesToEat" class="category_button nav-link"
+            >Places to eat</a
+          >
+          <a href="#/attractions" class="category_button nav-link"
+            >Attractions</a
+          >
+          <a href="#/events" class="category_button nav-link">Events</a>
+          <a href="#/activities" class="category_button active_button nav-link"
+            >Activities</a
+          >
         </div>
       </div>
     </section>
@@ -398,6 +498,7 @@
     <section id="favourites" class="page"></section>
     <section id="detailedView" class="page"></section>
 
+    <!-- PROFILE -->
     <section id="profile" class="page">
       <div class="top_logo_background">
         <img src="media/logo white.png" alt="white logo" class="top_logo" />
