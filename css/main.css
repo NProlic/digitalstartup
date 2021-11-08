@@ -123,6 +123,48 @@ svg {
   padding: 0 10%;
 }
 
+/* Opening window */
+#hideMe {
+  position: absolute;
+  background-color: var(--dark-blue);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 200;
+  -moz-animation: cssAnimation 0.5s ease-in 1.7s forwards;
+  /* Firefox */
+  -webkit-animation: cssAnimation 0.5s ease-in 1.7s forwards;
+  /* Safari and Chrome */
+  -o-animation: cssAnimation 0.5s ease-in 1.7s forwards;
+  /* Opera */
+  animation: cssAnimation 0.5s ease-in 1.7s forwards;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+
+.open_logo {
+  position: absolute;
+  width: 90%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes cssAnimation {
+  to {
+    width: 0;
+    height: 0;
+    overflow: hidden;
+  }
+}
+@-webkit-keyframes cssAnimation {
+  to {
+    width: 0;
+    height: 0;
+    visibility: hidden;
+  }
+}
 /* Onboarding */
 
 .onboarding-dots {
@@ -203,6 +245,8 @@ svg {
   margin: 0 auto;
   position: absolute;
   bottom: 64px;
+  font-size: 0.9rem;
+  font-family: montserrat, sans-serif;
 }
 
 .city-container {
@@ -389,6 +433,70 @@ svg {
 .favi {
   height: 16px;
   width: auto;
+}
+
+/* Style login page */
+
+#login {
+  margin: 8%;
+}
+
+.boarding-logo_login {
+  height: 80px;
+  width: auto;
+  display: block;
+  margin: 20% auto 10% auto;
+}
+
+.login_message {
+  width: 90%;
+  display: block;
+  margin: 0 auto 15% auto;
+  text-align: center;
+  font-size: 1.4rem;
+  font-family: montserrat, sans-serif;
+  font-weight: 600;
+  color: var(--dark-blue);
+}
+
+.form_login {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.form_input {
+  padding: 10px 20px;
+  margin: 5px 0;
+  height: 24px;
+  border: none;
+  outline: none;
+  box-shadow: 0px 1px 9px 0px rgba(0, 0, 0, 0.16);
+  -webkit-box-shadow: 0px 1px 9px 0px rgba(0, 0, 0, 0.16);
+  -moz-box-shadow: 0px 1px 9px 0px rgba(0, 0, 0, 0.16);
+}
+
+.login_button {
+  background-color: #d42d26;
+  color: #f5f5f5;
+  border: none;
+  width: 80%;
+  height: 40px;
+  margin: 10% auto 20% auto;
+  display: block;
+  font-size: 0.9rem;
+  font-family: montserrat, sans-serif;
+}
+
+.login_bottom {
+  text-align: center;
+  margin: 0 auto;
+}
+
+.member_login {
+  color: #d42d26;
+  font-weight: 600;
 }
 
 /* Style explore page */
@@ -679,7 +787,7 @@ input:checked + .slider:before {
   border: 1px solid white;
   height: 185px;
   width: 97%;
-  margin: 0 auto 35px auto;
+  margin: 6px auto;
   position: relative;
 }
 
@@ -717,18 +825,11 @@ input:checked + .slider:before {
   scrollbar-width: none;
 }
 
-.categories_buttons a {
-  white-space: nowrap;
-}
-
-.categories_buttons::-webkit-scrollbar {
-  display: none;
-}
-
 .categories_buttons_activities {
   display: flex;
   flex-direction: row;
-  overflow: visible;
+  justify-content: right;
+  overflow: scroll;
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
@@ -737,7 +838,15 @@ input:checked + .slider:before {
   white-space: nowrap;
 }
 
+.categories_buttons_activities a {
+  white-space: nowrap;
+}
+
 .categories_buttons::-webkit-scrollbar {
+  display: none;
+}
+
+.categories_buttons_activities::-webkit-scrollbar {
   display: none;
 }
 

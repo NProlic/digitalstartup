@@ -7,6 +7,7 @@ const routes = {
   "#/onboard1": "onboard1",
   "#/onboard2": "onboard2",
   "#/onboard3": "onboard3",
+  "#/login": "login",
   "#/explore": "explore",
   "#/aarhus": "aarhus",
   "#/allLocations": "allLocations",

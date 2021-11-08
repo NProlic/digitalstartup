@@ -76,6 +76,10 @@
 
     <!-- ONBOARDING -->
     <section id="welcome" class="page onboard">
+
+      <div id='hideMe'>
+        <img src="media/logo white.png" class="open_logo" />
+      </div>
       <div class="onboarding-dots">
         <a href="#/" class="nav-link"><div class="active-dot"></div></a>
         <a href="#/onboard1" class="nav-link"
@@ -170,20 +174,20 @@
       <img src="media/logo1.png" class="boarding-logo" />
 
       <div class="options-container">
-        <div class="option-item option1">
-          <img src="media/restaurant.png" class="option-icon" />
+        <div class="option-item2 option1">
+          <img src="icons/restaurant.png" class="option-icon2" />
           <h6>Places to eat</h6>
         </div>
-        <div class="option-item option2">
-          <img src="media/museum.png" class="option-icon" />
+        <div class="option-item2 option2">
+          <img src="icons/museum.png" class="option-icon2" />
           <h6>Attractions</h6>
         </div>
-        <div class="option-item option3">
-          <img src="media/event.png" class="option-icon" />
+        <div class="option-item2 option3">
+          <img src="icons/calendar.png" class="option-icon2" />
           <h6>Events</h6>
         </div>
-        <div class="option-item option4">
-          <img src="media/running.png" class="option-icon" />
+        <div class="option-item2 option4">
+          <img src="icons/running.png" class="option-icon2" />
           <h6>Activities</h6>
         </div>
       </div>
@@ -222,7 +226,7 @@
           <div class="fav-frame">
             <div class="fav-like"><img src="media/heart.png" /></div>
             <div class="fav-icon1">
-              <img src="media/running.png" class="favi" />
+              <img src="icons/running.png" class="favi" />
             </div>
           </div>
         </div>
@@ -230,7 +234,7 @@
           <div class="fav-frame">
             <div class="fav-like"><img src="media/heart.png" /></div>
             <div class="fav-icon2">
-              <img src="media/restaurant.png" class="favi" />
+              <img src="icons/restaurant.png" class="favi" />
             </div>
           </div>
         </div>
@@ -238,7 +242,7 @@
           <div class="fav-frame">
             <div class="fav-like"><img src="media/heart.png" /></div>
             <div class="fav-icon3">
-              <img src="media/event.png" class="favi" />
+              <img src="icons/calendar.png" class="favi" />
             </div>
           </div>
         </div>
@@ -246,7 +250,7 @@
           <div class="fav-frame">
             <div class="fav-like"><img src="media/heart.png" /></div>
             <div class="fav-icon4">
-              <img src="media/museum.png" class="favi" />
+              <img src="icons/museum.png" class="favi" />
             </div>
           </div>
         </div>
@@ -260,9 +264,37 @@
         </p>
       </div>
 
-      <a href="#/explore" class="nav-link next" style="display: block"
+      <a href="#/login" class="nav-link next" style="display: block"
         ><button class="next-button">Get started</button></a
       >
+    </section>
+
+    <section id="login" class="page">
+      <img src="media/logo1.png" class="boarding-logo_login" />
+
+      <div class="login_message">
+        <h1">Ready to tick sights off your list?</h1>
+      </div>
+
+      <div class="login_form">
+        <form class="form_login">
+          <input type="name" placeholder="Enter username" class="form_input" />
+          <input
+            type="password"
+            placeholder="Create a password"
+            class="form_input"
+          />
+        </form>
+      </div>
+
+      <a href="#/explore" class="nav-link"
+        ><button class="login_button">Sign up</button></a
+      >
+
+      <div class="login_bottom">
+      <p class="login_question">Already a member?</p>
+      <p class="member_login">Log in</p>
+      </div>
     </section>
 
     <!-- EXPLORE -->
@@ -288,13 +320,13 @@
         <a href="#/aarhus" class="city-item2 aarhus nav-link">
           <div class="frame2"><p class="frame-content">AARHUS</p></div>
         </a>
-        <a href="#/allLocations" class="city-item2 cph nav-link">
+        <a href="#" class="city-item2 cph nav-link">
           <div class="frame2"><p class="frame-content">COPENHAGEN</p></div>
         </a>
-        <a href="#/aalborg" class="city-item2 aalborg">
+        <a href="#" class="city-item2 aalborg">
           <div class="frame2"><p class="frame-content">AALBORG</p></div>
         </a>
-        <a href="#/odense" class="city-item2 odense">
+        <a href="#" class="city-item2 odense">
           <div class="frame2"><p class="frame-content">ODENSE</p></div>
         </a>
       </div>
@@ -478,7 +510,7 @@
           <img src="media/arrow-left.png" class="arrow_back"
         /></a>
 
-        <div class="categories_buttons">
+        <div class="categories_buttons_activities">
           <a href="#/placesToEat" class="category_button nav-link"
             >Places to eat</a
           >
