@@ -158,7 +158,6 @@ svg {
     overflow: hidden;
   }
 }
-
 @-webkit-keyframes cssAnimation {
   to {
     width: 0;
@@ -166,7 +165,6 @@ svg {
     visibility: hidden;
   }
 }
-
 /* Onboarding */
 
 .onboarding-dots {
@@ -437,58 +435,6 @@ svg {
   width: auto;
 }
 
-/* card styling */
-.place_card {
-  display: flex;
-  margin: 0 5px 10px 5px;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-}
-
-.place_card .request-image {
-  width: 30%;
-  height: 100%;
-}
-
-.place_card .request-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.place_card .label_icon{
-  width: 11px;
-  margin-right: 5px;
-}
-
-.place_card .request-text {
-  padding: 12px;
-}
-
-.place_card .request-text .place_name {
-  font-size: 15px;
-  font-weight: 600;
-  margin: 0;
-}
-
-.place_card .request-text .location_container .address {
-  font-size: 12px;
-}
-
-.place_card .request-text .location_container {
-  display: flex;
-  margin-top: 8px;
-}
-
-.place_card .request-text .subcategory_container {
-  display: flex;
-  margin-top: 8px;
-}
-
-.place_card .request-text .subcategory_container p {
-  font-size: 12px;
-  margin: 0;
-}
-
 /* Style login page */
 
 #login {
@@ -611,7 +557,6 @@ hr {
   display: flex;
   flex-direction: row;
 }
-
 .search-field {
   width: 100%;
   padding: 10px 35px 10px 40px;
@@ -692,6 +637,54 @@ hr {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+}
+
+/* Style my trips page */
+
+#myTrips {
+  margin: 8%;
+}
+
+.landing_text_mytrips {
+  margin-top: 28%;
+}
+
+.city-container_mytrips {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.city-item_mytrips {
+  width: 100%;
+  height: 110px;
+  object-fit: contain;
+  margin-bottom: 20px;
+}
+
+.city-item_mytrips:first-child {
+  margin-top: 20px;
+}
+
+.city-item_mytrips:last-child {
+  margin-bottom: 100px;
+}
+
+.frame_mytrips {
+  border: 1px solid white;
+  height: 100px;
+  width: 80%x;
+  margin: 4px;
+  position: relative;
+}
+
+.frame-content_mytrips {
+  color: white;
+  font-size: 0.9rem;
+  position: absolute;
+  bottom: 2%;
+  left: 3%;
+  margin: 0;
 }
 
 /* Style profile page */
@@ -782,15 +775,15 @@ hr {
   transition: 0.4s;
 }
 
-input:checked+.slider {
+input:checked + .slider {
   background-color: #082747;
 }
 
-input:focus+.slider {
+input:focus + .slider {
   box-shadow: 0 0 1px #2196f3;
 }
 
-input:checked+.slider:before {
+input:checked + .slider:before {
   -webkit-transform: translateX(24px);
   -ms-transform: translateX(24px);
   transform: translateX(24px);
@@ -910,11 +903,11 @@ input:checked+.slider:before {
   background-color: white;
   text-decoration: none;
   color: #082747;
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   font-family: montserrat, sans-serif;
   font-weight: 500;
   padding: 10px;
-  margin-right: 8px;
+  margin-right: 10px;
   box-shadow: 0px 1px 9px 0px rgba(0, 0, 0, 0.16);
   -webkit-box-shadow: 0px 1px 9px 0px rgba(0, 0, 0, 0.16);
   -moz-box-shadow: 0px 1px 9px 0px rgba(0, 0, 0, 0.16);
@@ -923,6 +916,65 @@ input:checked+.slider:before {
 .active_button {
   color: white;
   background-color: var(--dark-blue);
+}
+
+/* Categories card styling */
+.places_card_container {
+  display: flex;
+  width: 85%;
+  margin: 10px auto;
+}
+
+.place_card {
+  display: flex;
+  flex-direction: column;
+  width: 75%;
+  height: 100px;
+  background-color: white;
+  box-shadow: 0px 1px 9px 0px rgba(0, 0, 0, 0.16);
+  -webkit-box-shadow: 0px 1px 9px 0px rgba(0, 0, 0, 0.16);
+  -moz-box-shadow: 0px 1px 9px 0px rgba(0, 0, 0, 0.16);
+}
+
+.place_name {
+  margin: 10px 10px;
+  font-size: 0.9rem;
+}
+
+.request-text {
+  margin: 3px 10px;
+  display: flex;
+  align-items: center;
+}
+
+.request-image img {
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+  object-fit: cover;
+}
+
+.address {
+  font-size: 0.6rem;
+  font-style: normal;
+  font-family: montserrat, sans-serif;
+}
+
+.label_icon {
+  width: 12px;
+  padding-right: 10px;
+}
+
+.card_category_name {
+  font-size: 0.6rem;
+  font-style: normal;
+  font-family: montserrat, sans-serif;
+}
+
+.subcategory_container {
+  margin: 0 10px;
+  display: flex;
+  align-items: center;
 }
 
 /* Aarhus styling */

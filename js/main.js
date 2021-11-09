@@ -9,17 +9,6 @@ let _categories = []; // empty categories array which is assigned all the data a
 let _places = []; // empty places array which is assigned all the data after fetching data json
 let _filteredPlaces = [];
 
-// Function declaration for getting the data from categories.json and display them on the screen
-async function loadCategories() {
-  const url = _categoryUrl; // get the link to json file
-  const response = await fetch(url); // wait for the response
-  const data = await response.json(); // wait for data
-  _categories = data; // assign the data to the _categories array
-  console.log(data);
-}
-
-loadCategories(); // calling the above function
-
 // Function declaration for getting the data from data.json(places) and assign it to the _places array
 // MADE  BY  ALL
 async function loadPlaces() {
@@ -27,7 +16,6 @@ async function loadPlaces() {
   const response = await fetch(url); // wait for the response
   const data = await response.json(); // wait for data
   _places = data; // assign the data to the _places array
-  console.log(data);
   appendPlacesToEat(_places);
   appendAttractions(_places);
   appendEvents(_places);
@@ -53,28 +41,23 @@ function appendPlacesToEat(_places) {
     if (place.MainCategory.Id === 62) {
       html += /*html*/ `
       <a onclick="selectPlace(${place.id})">
-        <div class="place_card">
-        
-          <div class="request-image">
+      <div class="places_card_container">
+        <div class="request-image">
             <img src="${getImageUrl(place)}">
-            </div>
-         
+        </div>
+        <div class="place_card">
+        <h3 class="place_name">${place.Name}</h3>
           <div class="request-text">
-           <h3 class="place_name">${place.Name}</h3>
-           
-            <div class="location_container">
-                <img class="label_icon" src="../icons/location.png">
-                <address class="address">${place.Address.AddressLine1}
-                <br>${place.Address.PostalCode} ${place.Address.City}
-                </address>
-            </div>
-              
-            <div class="subcategory_container">
-               <img class="label_icon" src="../icons/label.png">
-               <p>${place.Category.Name}</p>
-            </div>
+            <img class="label_icon" src="../icons/location.png">
+            <address class="address">${place.Address.AddressLine1}<br>${
+        place.Address.PostalCode
+      } ${place.Address.City}</address>
           </div>
-
+         <div class="subcategory_container">
+          <img class="label_icon" src="../icons/label.png">
+          <p class="card_category_name">${place.Category.Name}</p>
+          </div>
+        </div>
         </div>
       </a>
     `;
@@ -92,15 +75,23 @@ function appendAttractions(_places) {
     if (place.MainCategory.Id === 3) {
       html += /*html*/ `
       <a onclick="selectPlace(${place.id})">
-        <div class="place_card">
-          <div class="request-image">
+      <div class="places_card_container">
+        <div class="request-image">
             <img src="${getImageUrl(place)}">
-            </div>
+        </div>
+        <div class="place_card">
+        <h3 class="place_name">${place.Name}</h3>
           <div class="request-text">
-            <img src="../icons/location.png">
-            <address class="address">"${place.Address.AddressLine1}"</address>
+            <img class="label_icon" src="../icons/location.png">
+            <address class="address">${place.Address.AddressLine1}<br>${
+        place.Address.PostalCode
+      } ${place.Address.City}</address>
           </div>
-          <div>"${place.Category.Name}</div>
+         <div class="subcategory_container">
+          <img class="label_icon" src="../icons/label.png">
+          <p class="card_category_name">${place.Category.Name}</p>
+          </div>
+        </div>
         </div>
       </a>
     `;
@@ -114,18 +105,26 @@ function appendEvents(_places) {
 
   let html = "";
   for (const place of _places) {
-    if (place.MainCategory.Id === 59) {
+    if (place.MainCategory.Id === 58) {
       html += /*html*/ `
       <a onclick="selectPlace(${place.id})">
-        <div class="place_card">
-          <div class="request-image">
+      <div class="places_card_container">
+        <div class="request-image">
             <img src="${getImageUrl(place)}">
-            </div>
+        </div>
+        <div class="place_card">
+        <h3 class="place_name">${place.Name}</h3>
           <div class="request-text">
-            <img src="../icons/location.png">
-            <address class="address">"${place.Address.AddressLine1}"</address>
+            <img class="label_icon" src="../icons/location.png">
+            <address class="address">${place.Address.AddressLine1}<br>${
+        place.Address.PostalCode
+      } ${place.Address.City}</address>
           </div>
-          <div>"${place.Category.Name}</div>
+         <div class="subcategory_container">
+          <img class="label_icon" src="../icons/label.png">
+          <p class="card_category_name">${place.Category.Name}</p>
+          </div>
+        </div>
         </div>
       </a>
     `;
@@ -142,27 +141,27 @@ function appendActivities(_places) {
     if (place.MainCategory.Id === 36) {
       html += /*html*/ `
       <a onclick="selectPlace(${place.id})">
-        <div class="place_card">
-          <div class="request-image">
+      <div class="places_card_container">
+        <div class="request-image">
             <img src="${getImageUrl(place)}">
-            </div>
+        </div>
+        <div class="place_card">
+        <h3 class="place_name">${place.Name}</h3>
           <div class="request-text">
-            <img src="../icons/location.png">
-            <address class="address">"${place.Address.AddressLine1}"</address>
+            <img class="label_icon" src="../icons/location.png">
+            <address class="address">${place.Address.AddressLine1}<br>${
+        place.Address.PostalCode
+      } ${place.Address.City}</address>
           </div>
-          <div>"${place.Category.Name}</div>
+         <div class="subcategory_container">
+          <img class="label_icon" src="../icons/label.png">
+          <p class="card_category_name">${place.Category.Name}</p>
+          </div>
+        </div>
         </div>
       </a>
     `;
     }
     placesCards.innerHTML = html;
-  }
-}
-
-function hideNull(place) {
-  if (place.Files.length >= 1) {
-    return place.Files[0].Uri;
-  } else if (place.Files.length < 1) {
-    return (url = "../media/aarhus2.jpg");
   }
 }
