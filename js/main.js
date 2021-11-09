@@ -36,6 +36,8 @@ loadPlaces();
 function getImageUrl(place) {
   if (place.Files.length >= 1) {
     return place.Files[0].Uri;
+  } else if (place.Files.length < 1) {
+    return (url = "../media/aarhus2.jpg");
   }
 }
 
