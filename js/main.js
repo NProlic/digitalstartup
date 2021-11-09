@@ -28,7 +28,10 @@ async function loadPlaces() {
   const data = await response.json(); // wait for data
   _places = data; // assign the data to the _places array
   console.log(data);
-  appendPlaces(_places);
+  appendPlacesToEat(_places);
+  appendAttractions(_places);
+  appendEvents(_places);
+  appendActivities(_places);
 }
 
 loadPlaces();
@@ -42,16 +45,18 @@ function getImageUrl(place) {
 }
 
 // Function to append the places to the DOM
-function appendPlaces(_places) {
-  const placesCards = document.querySelector(".places_cards_container"); // selecting from the HTML the container which will hold the freelancers cards
+function appendPlacesToEat(_places) {
+  const placesCards = document.querySelector(".eat_cards_container"); // selecting from the HTML the container which will hold the freelancers cards
 
   let html = "";
   for (const place of _places) {
-    html += /*html*/ `
+    if (place.MainCategory.Id === 62) {
+      html += /*html*/ `
       <a onclick="selectPlace(${place.id})">
         <div class="place_card">
           <div class="request-image">
             <img src="${getImageUrl(place)}">
+            </div>
           <div class="request-text">
             <img src="../icons/location.png">
             <address class="address">"${place.Address.AddressLine1}"</address>
@@ -60,6 +65,83 @@ function appendPlaces(_places) {
         </div>
       </a>
     `;
+    }
+    placesCards.innerHTML = html;
   }
-  placesCards.innerHTML = html;
+}
+
+// Function to append the places to the DOM
+function appendAttractions(_places) {
+  const placesCards = document.querySelector(".attractions_cards_container"); // selecting from the HTML the container which will hold the freelancers cards
+
+  let html = "";
+  for (const place of _places) {
+    if (place.MainCategory.Id === 3) {
+      html += /*html*/ `
+      <a onclick="selectPlace(${place.id})">
+        <div class="place_card">
+          <div class="request-image">
+            <img src="${getImageUrl(place)}">
+            </div>
+          <div class="request-text">
+            <img src="../icons/location.png">
+            <address class="address">"${place.Address.AddressLine1}"</address>
+          </div>
+          <div>"${place.Category.Name}</div>
+        </div>
+      </a>
+    `;
+    }
+    placesCards.innerHTML = html;
+  }
+}
+
+function appendEvents(_places) {
+  const placesCards = document.querySelector(".events_cards_container"); // selecting from the HTML the container which will hold the freelancers cards
+
+  let html = "";
+  for (const place of _places) {
+    if (place.MainCategory.Id === 59) {
+      html += /*html*/ `
+      <a onclick="selectPlace(${place.id})">
+        <div class="place_card">
+          <div class="request-image">
+            <img src="${getImageUrl(place)}">
+            </div>
+          <div class="request-text">
+            <img src="../icons/location.png">
+            <address class="address">"${place.Address.AddressLine1}"</address>
+          </div>
+          <div>"${place.Category.Name}</div>
+        </div>
+      </a>
+    `;
+    }
+    placesCards.innerHTML = html;
+  }
+}
+
+function appendActivities(_places) {
+  const placesCards = document.querySelector(".activities_cards_container"); // selecting from the HTML the container which will hold the freelancers cards
+
+  let html = "";
+  for (const place of _places) {
+    if (place.MainCategory.Id === 36) {
+      html += /*html*/ `
+      <a onclick="selectPlace(${place.id})">
+        <div class="place_card">
+          <div class="request-image">
+            <img src="${getImageUrl(place)}">
+            </div>
+          <div class="request-text">
+            <img src="../icons/location.png">
+            <address class="address">"${place.Address.AddressLine1}"</address>
+          </div>
+          <div>"${place.Category.Name}</div>
+        </div>
+      </a>
+    `;
+    }
+    placesCards.innerHTML = html;
+  }
 }
