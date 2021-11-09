@@ -158,6 +158,7 @@ svg {
     overflow: hidden;
   }
 }
+
 @-webkit-keyframes cssAnimation {
   to {
     width: 0;
@@ -165,6 +166,7 @@ svg {
     visibility: hidden;
   }
 }
+
 /* Onboarding */
 
 .onboarding-dots {
@@ -435,6 +437,58 @@ svg {
   width: auto;
 }
 
+/* card styling */
+.place_card {
+  display: flex;
+  margin: 0 5px 10px 5px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.place_card .request-image {
+  width: 30%;
+  height: 100%;
+}
+
+.place_card .request-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.place_card .label_icon{
+  width: 11px;
+  margin-right: 5px;
+}
+
+.place_card .request-text {
+  padding: 12px;
+}
+
+.place_card .request-text .place_name {
+  font-size: 15px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.place_card .request-text .location_container .address {
+  font-size: 12px;
+}
+
+.place_card .request-text .location_container {
+  display: flex;
+  margin-top: 8px;
+}
+
+.place_card .request-text .subcategory_container {
+  display: flex;
+  margin-top: 8px;
+}
+
+.place_card .request-text .subcategory_container p {
+  font-size: 12px;
+  margin: 0;
+}
+
 /* Style login page */
 
 #login {
@@ -557,6 +611,7 @@ hr {
   display: flex;
   flex-direction: row;
 }
+
 .search-field {
   width: 100%;
   padding: 10px 35px 10px 40px;
@@ -727,15 +782,15 @@ hr {
   transition: 0.4s;
 }
 
-input:checked + .slider {
+input:checked+.slider {
   background-color: #082747;
 }
 
-input:focus + .slider {
+input:focus+.slider {
   box-shadow: 0 0 1px #2196f3;
 }
 
-input:checked + .slider:before {
+input:checked+.slider:before {
   -webkit-transform: translateX(24px);
   -ms-transform: translateX(24px);
   transform: translateX(24px);
