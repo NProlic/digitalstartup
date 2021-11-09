@@ -51,12 +51,19 @@ function appendPlaces(_places) {
       <a onclick="selectPlace(${place.id})">
         <div class="place_card">
           <div class="request-image">
+          
             <img src="${getImageUrl(place)}">
           <div class="request-text">
-            <img src="../icons/location.png">
-            <address class="address">"${place.Address.AddressLine1}"</address>
+          <h3 class="place_name">${place.Name}</h3>
+            <img class="label_icon" src="../icons/location.png">
+            <address class="address">${place.Address.AddressLine1}<br>${
+      place.Address.PostalCode
+    } ${place.Address.City}</address>
           </div>
-          <div>"${place.Category.Name}</div>
+          <div class="subcategory_container">
+          <img class="label_icon" src="../icons/label.png">
+          <p>${place.Category.Name}</p>
+          </div>
         </div>
       </a>
     `;
