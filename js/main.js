@@ -33,20 +33,25 @@ async function loadPlaces() {
 
 loadPlaces();
 
+function getImageUrl(place) {
+  if (place.Files.length >= 1) {
+    return place.Files[0].Uri;
+  }
+}
+
 // Function to append the places to the DOM
 function appendPlaces(_places) {
   const placesCards = document.querySelector(".places_cards_container"); // selecting from the HTML the container which will hold the freelancers cards
 
   let html = "";
   for (const place of _places) {
-    html += `
+    html += /*html*/ `
       <a onclick="selectPlace(${place.id})">
         <div class="place_card">
           <div class="request-image">
-            <img src="${place.Files.Uri}" alt="Place Image">
-          </div>
+            <img src="${getImageUrl(place)}">
           <div class="request-text">
-            <img src="icons/location.png>
+            <img src="../icons/location.png">
             <address class="address">"${place.Address.AddressLine1}"</address>
           </div>
           <div>"${place.Category.Name}</div>
