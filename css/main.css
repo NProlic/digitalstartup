@@ -79,7 +79,7 @@ img {
   border-radius: 35px 35px 0 0;
   flex-direction: row;
   justify-content: center;
-  display: flex;
+  display: none;
 }
 
 /* Style the links inside the navigation bar */
