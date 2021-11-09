@@ -15,7 +15,7 @@ async function loadCategories() {
   const response = await fetch(url); // wait for the response
   const data = await response.json(); // wait for data
   _categories = data; // assign the data to the _categories array
-  appendCategories(_categories); // call function to display categories to DOM
+  console.log(data);
 }
 
 loadCategories(); // calling the above function
@@ -27,6 +27,7 @@ async function loadPlaces() {
   const response = await fetch(url); // wait for the response
   const data = await response.json(); // wait for data
   _places = data; // assign the data to the _places array
+  console.log(data);
 }
 
 loadPlaces();
