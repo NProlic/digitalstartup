@@ -58,14 +58,7 @@ function appendPlacesToEat(_places) {
           <div class="request-image">
             <img src="${getImageUrl(place)}">
             </div>
-          <div class="request-text">
-          <h3 class="place_name">${place.Name}</h3>
-            <img class="label_icon" src="../icons/location.png">
-            <address class="address">${place.Address.AddressLine1}<br>${
-      place.Address.PostalCode
-    } ${place.Address.City}</address>
-          </div>
-
+         
           <div class="request-text">
            <h3 class="place_name">${place.Name}</h3>
            
