@@ -926,7 +926,7 @@ input:checked + .slider:before {
 }
 
 .place_card {
-  display: flex;
+  display: block;
   flex-direction: column;
   width: 75%;
   height: 100px;
@@ -934,11 +934,17 @@ input:checked + .slider:before {
   box-shadow: 0px 1px 9px 0px rgba(0, 0, 0, 0.16);
   -webkit-box-shadow: 0px 1px 9px 0px rgba(0, 0, 0, 0.16);
   -moz-box-shadow: 0px 1px 9px 0px rgba(0, 0, 0, 0.16);
+  overflow: hidden;
 }
 
 .place_name {
   margin: 10px 10px;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  display: block;
+  width: 80%;
 }
 
 .request-text {
@@ -958,6 +964,10 @@ input:checked + .slider:before {
   font-size: 0.6rem;
   font-style: normal;
   font-family: montserrat, sans-serif;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  display: block;
 }
 
 .label_icon {
