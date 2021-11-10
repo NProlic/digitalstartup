@@ -16,10 +16,6 @@ async function loadPlaces() {
   const response = await fetch(url); // wait for the response
   const data = await response.json(); // wait for data
   _places = data; // assign the data to the _places array
-  appendPlacesToEat(_places);
-  appendAttractions(_places);
-  appendEvents(_places);
-  appendActivities(_places);
 }
 
 loadPlaces();
@@ -28,7 +24,7 @@ function getImageUrl(place) {
   if (place.Files.length >= 1) {
     return place.Files[0].Uri;
   } else if (place.Files.length < 1) {
-    return (url = "../media/aarhus2.jpg");
+    return (url = "../media/aarhus.png");
   }
 }
 
@@ -176,4 +172,32 @@ function appendActivities(_places) {
     }
     placesCards.innerHTML = html;
   }
+}
+
+function filterByPlacesToEat() {
+  const results = _places.filter(
+    (place) => place.MainCategory.Name == "Places to eat"
+  );
+  appendPlacesToEat(results);
+}
+
+function filterByAttractions() {
+  const results = _places.filter(
+    (place) => place.MainCategory.Name == "Attractions"
+  );
+  appendAttractions(results);
+}
+
+function filterByEvents() {
+  const results = _places.filter(
+    (place) => place.MainCategory.Name == "Events"
+  );
+  appendEvents(results);
+}
+
+function filterByActivities() {
+  const results = _places.filter(
+    (place) => place.MainCategory.Name == "Activities"
+  );
+  appendActivities(results);
 }
