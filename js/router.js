@@ -86,6 +86,25 @@ function setActiveTab(pathname) {
 }
 
 //Hiding the menu for onboarding
+let cUrl = window.location.href;
+
+if (
+  cUrl.indexOf("explore") != -1 ||
+  cUrl.indexOf("aarhus") != -1 ||
+  cUrl.indexOf("allLocations") != -1 ||
+  cUrl.indexOf("placesToEat") != -1 ||
+  cUrl.indexOf("attractions") != -1 ||
+  cUrl.indexOf("events") != -1 ||
+  cUrl.indexOf("activities") != -1 ||
+  cUrl.indexOf("myTrips") != -1 ||
+  cUrl.indexOf("favourites") != -1 ||
+  cUrl.indexOf("detailedView") != -1
+) {
+  menu.style.display = "flex";
+} else {
+  menu.style.display = "none";
+}
+
 window.showMenu = function () {
   let navBar = document.querySelector(".tabbar");
   if ((navBar.style.display = "none")) {
