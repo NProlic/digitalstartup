@@ -201,3 +201,20 @@ function filterByActivities() {
   );
   appendActivities(results);
 }
+
+function selectPlace(id) {
+  const place = _places.find((place) => place.id == id);
+  document.querySelector("#detailedView").innerHTML = place.Name = /*html*/ `
+        <img src="${getImageUrl(place)}">
+        <article>
+            <h1>${place.Name}</h1>
+            <div class="subcategory_container">
+          <img class="label_icon" src="../icons/label.png">
+          <p class="card_category_name">${place.Category.Name}</p>
+          </div>
+          <p class="place_description">${place.Descriptions.Text}</p>
+
+        </article>
+    `;
+  navigateTo("#/detailedView");
+}
