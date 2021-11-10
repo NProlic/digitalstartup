@@ -589,12 +589,13 @@ hr {
 /* Style cities */
 
 .city-container2 {
-  margin: 0 auto;
+  margin: 0 auto 200px auto;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 1fr);
   grid-column-gap: 10px;
   grid-row-gap: 20px;
+  justify-content: center;
 }
 
 .city-item2 {
@@ -953,11 +954,52 @@ input:checked + .slider:before {
   align-items: center;
 }
 
+.img_withicon {
+  position: relative;
+  display: inline-block;
+}
+
 .request-image img {
   width: 100px;
   height: 100px;
   overflow: hidden;
   object-fit: cover;
+}
+
+.category_icon_small_eat {
+  width: 14px;
+  padding: 2px;
+  background-color: #8d1b37;
+  position: absolute;
+  right: 5px;
+  bottom: 8px;
+}
+
+.category_icon_small_attractions {
+  width: 14px;
+  padding: 2px;
+  background-color: #317356;
+  position: absolute;
+  right: 5px;
+  bottom: 8px;
+}
+
+.category_icon_small_events {
+  width: 14px;
+  padding: 2px;
+  background-color: #235777;
+  position: absolute;
+  right: 5px;
+  bottom: 8px;
+}
+
+.category_icon_small_activities {
+  width: 14px;
+  padding: 2px;
+  background-color: #d3a337;
+  position: absolute;
+  right: 5px;
+  bottom: 8px;
 }
 
 .address {

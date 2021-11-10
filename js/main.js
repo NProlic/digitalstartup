@@ -42,9 +42,12 @@ function appendPlacesToEat(_places) {
       html += /*html*/ `
       <a onclick="selectPlace(${place.id})">
       <div class="places_card_container">
+      <div class="img_withicon">
         <div class="request-image">
             <img src="${getImageUrl(place)}">
         </div>
+         <img class="category_icon_small_eat" src="../icons/restaurant.png">
+         </div>
         <div class="place_card">
         <h3 class="place_name">${place.Name}</h3>
           <div class="request-text">
@@ -76,8 +79,11 @@ function appendAttractions(_places) {
       html += /*html*/ `
       <a onclick="selectPlace(${place.id})">
       <div class="places_card_container">
+      <div class="img_withicon">
         <div class="request-image">
             <img src="${getImageUrl(place)}">
+        </div>
+        <img class="category_icon_small_attractions" src="../icons/museum.png">
         </div>
         <div class="place_card">
         <h3 class="place_name">${place.Name}</h3>
@@ -109,8 +115,11 @@ function appendEvents(_places) {
       html += /*html*/ `
       <a onclick="selectPlace(${place.id})">
       <div class="places_card_container">
+      <div class="img_withicon">
         <div class="request-image">
             <img src="${getImageUrl(place)}">
+        </div>
+        <img class="category_icon_small_events" src="../icons/calendar.png">
         </div>
         <div class="place_card">
         <h3 class="place_name">${place.Name}</h3>
@@ -142,8 +151,11 @@ function appendActivities(_places) {
       html += /*html*/ `
       <a onclick="selectPlace(${place.id})">
       <div class="places_card_container">
+      <div class="img_withicon">
         <div class="request-image">
             <img src="${getImageUrl(place)}">
+        </div>
+        <img class="category_icon_small_activities" src="../icons/running.png">
         </div>
         <div class="place_card">
         <h3 class="place_name">${place.Name}</h3>
