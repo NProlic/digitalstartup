@@ -206,14 +206,35 @@ function selectPlace(id) {
   const place = _places.find((place) => place.id == id);
   document.querySelector("#detailedView").innerHTML = place.Name = /*html*/ `
         <img src="${getImageUrl(place)}">
-        <article>
-            <h1>${place.Name}</h1>
+        <article class="article_page">
+            <h1 class="showplace_name">${place.Name}</h1>
             <div class="subcategory_container">
           <img class="label_icon" src="../icons/label.png">
           <p class="card_category_name">${place.Category.Name}</p>
           </div>
-          <p class="place_description">${place.Descriptions.Text}</p>
-
+          <p class="detaliedview_description">${
+            place.Descriptions[0]["Text"]
+          }</p>
+          <hr>
+          <div class="address_contact_container">
+          <h4 class="address_contact_titel">Address</h4>
+           <div class="request-text2">
+            <img class="label_icon" src="../icons/location.png">
+            <address class="address">${place.Address.AddressLine1}<br>${
+    place.Address.PostalCode
+  } ${place.Address.City}</address>
+            </div>
+            </div>
+             <div class="address_contact_container">
+            <h4 class="address_contact_titel">Contact</h4>
+            <div class="request-text2">
+             <img class="label_icon" src="../icons/email.png">
+            <p class="contactinfo">${place.ContactInformation.Email}</p><br>
+             <img class="label_icon" src="../icons/phone.png">
+            <p class="contactinfo">${place.ContactInformation.Phone}</p>
+          </div>
+          </div>
+          <h4 class="hashtag">#CityBreak</h4>
         </article>
     `;
   navigateTo("#/detailedView");
