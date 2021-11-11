@@ -22,6 +22,7 @@ async function loadPlaces() {
 loadPlaces();
 
 function getImageUrl(place) {
+  console.log(place);
   let url = "../media/aarhus.png";
   if (place.Files.length) {
     url = place.Files[0].Uri;
@@ -37,7 +38,7 @@ function appendPlacesToEat(_places) {
   for (const place of _places) {
     if (place.MainCategory.Id === 62) {
       html += /*html*/ `
-      <a onclick="selectPlace(${place.id})">
+      <a onclick="selectPlace(${place.Id})">
       <div class="places_card_container">
       ${generateFavPostsButton(place.Id)}
       <div class="img_withicon">
@@ -75,7 +76,7 @@ function appendAttractions(_places) {
   for (const place of _places) {
     if (place.MainCategory.Id === 3) {
       html += /*html*/ `
-      <a onclick="selectPlace(${place.id})">
+      <a onclick="selectPlace(${place.Id})">
       <div class="places_card_container">
       ${generateFavPostsButton(place.Id)}
       <div class="img_withicon">
@@ -112,7 +113,7 @@ function appendEvents(_places) {
   for (const place of _places) {
     if (place.MainCategory.Id === 58) {
       html += /*html*/ `
-      <a onclick="selectPlace(${place.id})">
+      <a onclick="selectPlace(${place.Id})">
       <div class="places_card_container">
       ${generateFavPostsButton(place.Id)}
       <div class="img_withicon">
@@ -149,7 +150,7 @@ function appendActivities(_places) {
   for (const place of _places) {
     if (place.MainCategory.Id === 36) {
       html += /*html*/ `
-      <a onclick="selectPlace(${place.id})">
+      <a onclick="selectPlace(${place.Id})">
       <div class="places_card_container">
       ${generateFavPostsButton(place.Id)}
       <div class="img_withicon">
@@ -208,8 +209,8 @@ function filterByActivities() {
 }
 
 function selectPlace(id) {
-  const place = _places.find((place) => place.id == id);
-  document.querySelector("#detailedView").innerHTML = place.Name = /*html*/ `
+  const place = _places.find((place) => place.Id == id);
+  document.querySelector("#detailedViewContainer").innerHTML = /*html*/ `
         <img src="${getImageUrl(place)}">
         <article class="article_page">
             <h1 class="showplace_name">${place.Name}</h1>
