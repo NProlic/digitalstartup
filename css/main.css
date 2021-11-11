@@ -1155,3 +1155,8 @@ input:checked + .slider:before {
   font-size: 1rem;
   color: #d42d26;
 }
+
+.heart-heading {
+  margin-right: 12px;
+  margin-top: 5px;
+}
