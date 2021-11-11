@@ -926,6 +926,13 @@ input:checked + .slider:before {
   margin: 10px auto;
 }
 
+.heart-heading {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .place_card {
   display: block;
   flex-direction: column;
@@ -945,7 +952,7 @@ input:checked + .slider:before {
   white-space: nowrap;
   text-overflow: ellipsis;
   display: block;
-  width: 80%;
+  width: 85%;
 }
 
 .request-text {
