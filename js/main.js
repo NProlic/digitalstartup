@@ -8,6 +8,7 @@ let _selectedPlaceId; // global variable used to select the clicked place in sel
 let _categories = []; // empty categories array which is assigned all the data after feetching the json file
 let _places = []; // empty places array which is assigned all the data after fetching data json
 let _filteredPlaces = [];
+let _favPosts = [];
 
 // Function declaration for getting the data from data.json(places) and assign it to the _places array
 // MADE  BY  ALL
@@ -21,11 +22,11 @@ async function loadPlaces() {
 loadPlaces();
 
 function getImageUrl(place) {
-  if (place.Files.length >= 1) {
-    return place.Files[0].Uri;
-  } else if (place.Files.length < 1) {
-    return (url = "../media/aarhus.png");
+  let url = "../media/aarhus.png";
+  if (place.Files.length) {
+    url = place.Files[0].Uri;
   }
+  return url;
 }
 
 // Function to append the places to the DOM
@@ -38,6 +39,7 @@ function appendPlacesToEat(_places) {
       html += /*html*/ `
       <a onclick="selectPlace(${place.id})">
       <div class="places_card_container">
+      ${generateFavPostsButton(place.Id)}
       <div class="img_withicon">
         <div class="request-image">
             <img src="${getImageUrl(place)}">
@@ -75,6 +77,7 @@ function appendAttractions(_places) {
       html += /*html*/ `
       <a onclick="selectPlace(${place.id})">
       <div class="places_card_container">
+      ${generateFavPostsButton(place.Id)}
       <div class="img_withicon">
         <div class="request-image">
             <img src="${getImageUrl(place)}">
@@ -111,6 +114,7 @@ function appendEvents(_places) {
       html += /*html*/ `
       <a onclick="selectPlace(${place.id})">
       <div class="places_card_container">
+      ${generateFavPostsButton(place.Id)}
       <div class="img_withicon">
         <div class="request-image">
             <img src="${getImageUrl(place)}">
@@ -147,6 +151,7 @@ function appendActivities(_places) {
       html += /*html*/ `
       <a onclick="selectPlace(${place.id})">
       <div class="places_card_container">
+      ${generateFavPostsButton(place.Id)}
       <div class="img_withicon">
         <div class="request-image">
             <img src="${getImageUrl(place)}">
@@ -238,4 +243,100 @@ function selectPlace(id) {
         </article>
     `;
   navigateTo("#/detailedView");
+}
+
+// Function to append the places to the DOM
+function appendFavourites() {
+  const placesCards = document.querySelector(".fav_eat_container"); // selecting from the HTML the container which will hold the freelancers cards
+
+  let html = "";
+  for (const place of _favPosts) {
+    html += /*html*/ `
+      <a onclick="selectPlace(${place.Id})">
+      <div class="places_card_container">
+      ${generateFavPostsButton(place.Id)}
+        <div class="request-image">
+            <img src="${getImageUrl(place)}">
+        </div>
+        <div class="place_card">
+        <h3 class="place_name">${place.Name}</h3>
+          <div class="request-text">
+            <img class="label_icon" src="../icons/location.png">
+            <address class="address">${place.Address.AddressLine1}<br>${
+      place.Address.PostalCode
+    } ${place.Address.City}</address>
+          </div>
+         <div class="subcategory_container">
+          <img class="label_icon" src="../icons/label.png">
+          <p class="card_category_name">${place.Category.Name}</p>
+          </div>
+        </div>
+        </div>
+      </a>
+    `;
+  }
+  placesCards.innerHTML = html;
+}
+
+/**
+ * Generating the fav button
+ */
+function generateFavPostsButton(placeId) {
+  let btnTemplate = `
+        <a onclick="addToFavourites('${placeId}', this)">
+      <svg xmlns="http://www.w3.org/2000/svg" width="15.969" height="14.184" viewBox="0 0 15.969 14.184">
+      <g id="Icon_feather-heart" data-name="Icon feather-heart" transform="translate(1 1)">
+      <path id="Icon_feather-heart-2" data-name="Icon feather-heart" d="M15.215,5.574a3.675,3.675,0,0,0-5.2,0l-.708.708L8.6,5.574a3.676,3.676,0,1,0-5.2,5.2l.708.708,5.2,5.2,5.2-5.2.708-.708a3.675,3.675,0,0,0,0-5.2Z" transform="translate(-2.323 -4.497)" fill="none" stroke="#D42D26" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      </g>
+      </svg>
+      </a>
+    `;
+  if (isFavPosts(placeId)) {
+    btnTemplate = `
+      <a onclick ="removeFromFavourites('${placeId}', this)">
+      <svg xmlns="http://www.w3.org/2000/svg" width="15.969" height="14.184" viewBox="0 0 15.969 14.184">
+      <g id="Icon_feather-heart" data-name="Icon feather-heart" transform="translate(1 1)">
+      <path id="Icon_feather-heart-2" data-name="Icon feather-heart" d="M15.215,5.574a3.675,3.675,0,0,0-5.2,0l-.708.708L8.6,5.574a3.676,3.676,0,1,0-5.2,5.2l.708.708,5.2,5.2,5.2-5.2.708-.708a3.675,3.675,0,0,0,0-5.2Z" transform="translate(-2.323 -4.497)" fill="#D42D26" stroke="#D42D26" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      </g>
+      </svg>
+      </a>`;
+  }
+  return btnTemplate;
+}
+
+/**
+ * Adding activities to favorites by given postId
+ */
+function addToFavourites(placeId, element) {
+  let favPost = _places.find((place) => place.Id == placeId);
+  _favPosts.push(favPost);
+  appendFavourites();
+  // update the DOM to display the right icon
+  element.querySelector(
+    "svg"
+  ).innerHTML = `<g id="Icon_feather-heart" data-name="Icon feather-heart" transform="translate(1 1)">
+      <path id="Icon_feather-heart-2" data-name="Icon feather-heart" d="M15.215,5.574a3.675,3.675,0,0,0-5.2,0l-.708.708L8.6,5.574a3.676,3.676,0,1,0-5.2,5.2l.708.708,5.2,5.2,5.2-5.2.708-.708a3.675,3.675,0,0,0,0-5.2Z" transform="translate(-2.323 -4.497)" fill="#D42D26" stroke="#D42D26" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      </g>`;
+}
+
+/**
+ * Removing activities from favorites by given postId
+ */
+function removeFromFavourites(placeId, element) {
+  _favPosts = _favPosts.filter((place) => place.Id != placeId);
+  appendFavourites();
+  // update the DOM to display the right icon
+  element.querySelector(
+    "svg"
+  ).innerHTML = `<g id="Icon_feather-heart" data-name="Icon feather-heart" transform="translate(1 1)">
+      <path id="Icon_feather-heart-2" data-name="Icon feather-heart" d="M15.215,5.574a3.675,3.675,0,0,0-5.2,0l-.708.708L8.6,5.574a3.676,3.676,0,1,0-5.2,5.2l.708.708,5.2,5.2,5.2-5.2.708-.708a3.675,3.675,0,0,0,0-5.2Z" transform="translate(-2.323 -4.497)" fill="none" stroke="#D42D26" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      </g>`;
+}
+
+/**
+ * Checking if the activity already is added to favorite
+ */
+function isFavPosts(placeId) {
+  console.log(placeId);
+  return _favPosts.find((place) => place.Id == placeId); // checking if favorite has the activity with matching id or not
 }
