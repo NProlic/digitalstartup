@@ -589,7 +589,7 @@ hr {
 /* Style cities */
 
 .city-container2 {
-  margin: 0 auto 200px auto;
+  margin: 0 auto 100px auto;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 1fr);
@@ -1080,7 +1080,7 @@ input:checked + .slider:before {
   grid-template-rows: repeat(2, 1fr);
   grid-column-gap: 12px;
   grid-row-gap: 12px;
-  margin: 0 auto 100px auto;
+  margin: 0 auto 50px auto;
 }
 
 .option-item2 {
@@ -1159,4 +1159,17 @@ input:checked + .slider:before {
 .heart-heading {
   margin-right: 12px;
   margin-top: 5px;
+}
+
+.fav_eat_container .places_card_container {
+  padding: 0;
+  width: 100%;
+}
+
+.eat_cards_container,
+.attractions_cards_container,
+.events_cards_container,
+.activities_cards_container,
+.fav_eat_container {
+  padding-bottom: 80px;
 }

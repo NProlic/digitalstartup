@@ -269,15 +269,22 @@ function appendFavourites() {
   let html = "";
   for (const place of _favPosts) {
     html += /*html*/ `
-      <a onclick="selectPlace(${place.Id})">
+        <a onclick="selectPlace(${place.Id})">
       <div class="places_card_container">
-      ${generateFavPostsButton(place.Id)}
+      <div class="img_withicon">
         <div class="request-image">
             <img src="${getImageUrl(place)}">
         </div>
+        <img class="category_icon_small_activities" src="../icons/running.png">
+        </div>
         <div class="place_card">
-        <h3 class="place_name">${place.Name}</h3>
-          <div class="request-text">
+        <div class="heart-heading">
+        <h3 class="place_name" onclick="selectPlace(${place.Id})">${
+      place.Name
+    }</h3>
+         ${generateFavPostsButton(place.Id)}
+          </div>
+          <div class="request-text" onclick="selectPlace(${place.Id})">
             <img class="label_icon" src="../icons/location.png">
             <address class="address">${place.Address.AddressLine1}<br>${
       place.Address.PostalCode
